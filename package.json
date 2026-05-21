@@ -16,7 +16,7 @@
     "dependencies": {
         "@tiptap/extension-color": "2.8.0",
         "@tiptap/extension-image": "2.8.0",
-        "@tiptap/extension-link": "2.8.0",
+        "@tiptap/extension-link": "2.10.4",
         "@tiptap/extension-mathematics": "2.26.1",
         "@tiptap/extension-mention": "2.8.0",
         "@tiptap/extension-placeholder": "2.8.0",
