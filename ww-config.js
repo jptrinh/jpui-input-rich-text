@@ -42,6 +42,8 @@ export default {
                 'h5',
                 'h6',
                 'p',
+                'ul',
+                'ol',
                 'mention',
                 'a',
                 'blockquote',
@@ -661,6 +663,8 @@ export default {
                     { value: 'h5', label: { en: 'h5' } },
                     { value: 'h6', label: { en: 'h6' } },
                     { value: 'p', label: { en: 'p' } },
+                    { value: 'ul', label: { en: 'ul' } },
+                    { value: 'ol', label: { en: 'ol' } },
                     { value: 'a', label: { en: 'a' } },
                     { value: 'img', label: { en: 'image' } },
                     { value: 'blockquote', label: { en: 'blockquote' } },
@@ -828,6 +832,78 @@ export default {
                 lineHeight: '',
                 marginTop: '',
                 marginBottom: '',
+            },
+            states: true,
+            classes: true,
+            responsive: true,
+        },
+        ul: {
+            type: 'Object',
+            hidden: (content, sidepanelContent) => {
+                return sidepanelContent.selectedTag !== 'ul';
+            },
+            options: {
+                item: {
+                    ...textOptions,
+                    paddingLeft: {
+                        type: 'Length',
+                        label: { en: 'Padding left' },
+                        responsive: true,
+                        bindable: true,
+                        options: {
+                            unitChoices: [{ value: 'px', label: 'px', min: 0, max: 100 }],
+                            noRange: true,
+                        },
+                    },
+                },
+                singleLine: true,
+            },
+            defaultValue: {
+                fontSize: '',
+                fontFamily: '',
+                fontWeight: '',
+                textAlign: '',
+                color: '',
+                lineHeight: '',
+                marginTop: '',
+                marginBottom: '',
+                paddingLeft: '',
+            },
+            states: true,
+            classes: true,
+            responsive: true,
+        },
+        ol: {
+            type: 'Object',
+            hidden: (content, sidepanelContent) => {
+                return sidepanelContent.selectedTag !== 'ol';
+            },
+            options: {
+                item: {
+                    ...textOptions,
+                    paddingLeft: {
+                        type: 'Length',
+                        label: { en: 'Padding left' },
+                        responsive: true,
+                        bindable: true,
+                        options: {
+                            unitChoices: [{ value: 'px', label: 'px', min: 0, max: 100 }],
+                            noRange: true,
+                        },
+                    },
+                },
+                singleLine: true,
+            },
+            defaultValue: {
+                fontSize: '',
+                fontFamily: '',
+                fontWeight: '',
+                textAlign: '',
+                color: '',
+                lineHeight: '',
+                marginTop: '',
+                marginBottom: '',
+                paddingLeft: '',
             },
             states: true,
             classes: true,

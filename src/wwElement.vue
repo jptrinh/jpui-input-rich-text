@@ -848,6 +848,26 @@ export default {
                 '--p-lineHeight': this.content.p?.lineHeight,
                 '--p-margin-top': this.content.p?.marginTop,
                 '--p-margin-bottom': this.content.p?.marginBottom,
+                // ul
+                '--ul-fontSize': this.content.ul?.fontSize,
+                '--ul-fontFamily': this.content.ul?.fontFamily,
+                '--ul-fontWeight': this.content.ul?.fontWeight,
+                '--ul-textAlign': this.content.ul?.textAlign,
+                '--ul-color': this.content.ul?.color,
+                '--ul-lineHeight': this.content.ul?.lineHeight,
+                '--ul-margin-top': this.content.ul?.marginTop,
+                '--ul-margin-bottom': this.content.ul?.marginBottom,
+                '--ul-padding-left': this.content.ul?.paddingLeft,
+                // ol
+                '--ol-fontSize': this.content.ol?.fontSize,
+                '--ol-fontFamily': this.content.ol?.fontFamily,
+                '--ol-fontWeight': this.content.ol?.fontWeight,
+                '--ol-textAlign': this.content.ol?.textAlign,
+                '--ol-color': this.content.ol?.color,
+                '--ol-lineHeight': this.content.ol?.lineHeight,
+                '--ol-margin-top': this.content.ol?.marginTop,
+                '--ol-margin-bottom': this.content.ol?.marginBottom,
+                '--ol-padding-left': this.content.ol?.paddingLeft,
                 // mention
                 '--mention-fontSize': this.content.mention?.fontSize,
                 '--mention-fontFamily': this.content.mention?.fontFamily,
@@ -1640,6 +1660,28 @@ export default {
             line-height: var(--p-lineHeight);
             margin-top: var(--p-margin-top);
             margin-bottom: var(--p-margin-bottom);
+        }
+        ul:not([data-type='taskList']) {
+            font-size: var(--ul-fontSize);
+            font-family: var(--ul-fontFamily);
+            font-weight: var(--ul-fontWeight);
+            text-align: var(--ul-textAlign);
+            color: var(--ul-color);
+            line-height: var(--ul-lineHeight);
+            margin-top: var(--ul-margin-top);
+            margin-bottom: var(--ul-margin-bottom);
+            padding-left: var(--ul-padding-left);
+        }
+        ol {
+            font-size: var(--ol-fontSize);
+            font-family: var(--ol-fontFamily);
+            font-weight: var(--ol-fontWeight);
+            text-align: var(--ol-textAlign);
+            color: var(--ol-color);
+            line-height: var(--ol-lineHeight);
+            margin-top: var(--ol-margin-top);
+            margin-bottom: var(--ol-margin-bottom);
+            padding-left: var(--ol-padding-left);
         }
         a {
             display: initial;
