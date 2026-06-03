@@ -890,6 +890,7 @@ export default {
                 '--table-cell-color': this.content.table?.cellColor || '#000',
                 '--table-cell-padding-x': this.content.table?.cellPaddingX || '8px',
                 '--table-cell-padding-y': this.content.table?.cellPaddingY || '6px',
+                '--editor-padding': this.content.editorPadding || '8px',
             };
         },
         delay() {
@@ -1547,7 +1548,7 @@ export default {
         max-height: 100%;
         width: 100%;
         overflow: auto;
-        padding: 8px;
+        padding: var(--editor-padding);
         font-size: var(--p-fontSize);
         font-family: var(--p-fontFamily);
         font-weight: var(--p-fontSize);

@@ -346,6 +346,29 @@ export default {
             responsive: true,
             hidden: content => !content.debounce,
         },
+        editorPadding: {
+            section: 'settings',
+            label: { en: 'Editor padding' },
+            type: 'Spacing',
+            options: {
+                unitChoices: [
+                    { value: 'px', label: 'px', min: 0, max: 100 },
+                    { value: 'rem', label: 'rem', min: 0, max: 10 },
+                    { value: 'em', label: 'em', min: 0, max: 10 },
+                ],
+                noRange: true,
+                useVar: true,
+            },
+            defaultValue: '8px',
+            bindable: true,
+            responsive: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'CSS spacing value with unit (e.g., "8px", "1rem")',
+            },
+            /* wwEditor:end */
+        },
         placeholder: {
             section: 'settings',
             label: {
