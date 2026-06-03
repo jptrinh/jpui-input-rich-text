@@ -709,6 +709,15 @@ export default {
             return {
                 placeholder: wwLib.wwLang.getText(this.content.placeholder),
                 autofocus: this.content.autofocus,
+                allowHeadings: this.content.parameterTextType !== false,
+                allowBold: this.content.parameterBold !== false,
+                allowItalic: this.content.parameterItalic !== false,
+                allowStrike: this.content.parameterStrike !== false,
+                allowUnderline: this.content.parameterUnderline !== false,
+                allowBulletList: this.content.parameterBulletList !== false,
+                allowOrderedList: this.content.parameterOrderedList !== false,
+                allowBlockquote: this.content.parameterQuote !== false,
+                allowCodeBlock: this.content.parameterCodeBlock !== false,
                 image: {
                     inline: this.content.img?.inline,
                     allowBase64: true,
@@ -719,6 +728,7 @@ export default {
                     allowSpaces: this.content.mentionAllowSpaces,
                     char: this.content.mentionChar,
                 },
+                enableLatex: this.content.enableLatex !== false,
             };
         },
         currentTextType: {
@@ -963,7 +973,17 @@ export default {
                     this.$emit('trigger-event', { name: 'blur', event: { editor, event } });
                 },
                 extensions: [
-                    StarterKit,
+                    StarterKit.configure({
+                        heading: this.editorConfig.allowHeadings ? {} : false,
+                        bold: this.editorConfig.allowBold ? {} : false,
+                        italic: this.editorConfig.allowItalic ? {} : false,
+                        strike: this.editorConfig.allowStrike ? {} : false,
+                        bulletList: this.editorConfig.allowBulletList ? {} : false,
+                        orderedList: this.editorConfig.allowOrderedList ? {} : false,
+                        listItem: (this.editorConfig.allowBulletList || this.editorConfig.allowOrderedList) ? {} : false,
+                        blockquote: this.editorConfig.allowBlockquote ? {} : false,
+                        codeBlock: this.editorConfig.allowCodeBlock ? {} : false,
+                    }),
                     Link.configure({
                         HTMLAttributes: {
                             rel: 'noopener noreferrer',
@@ -971,7 +991,7 @@ export default {
                     }),
                     TextStyle,
                     Color,
-                    Underline,
+                    this.editorConfig.allowUnderline && Underline,
                     Table.configure({
                         resizable: true,
                     }),
@@ -1005,19 +1025,21 @@ export default {
                                 char: this.editorConfig.mention.char,
                             },
                         }),
-                    Mathematics.configure({
-                        regex: /(?<!\$)\$([^\$]+)\$(?!\$)/gi,
-                        katexOptions: {
-                            throwOnError: false,
-                        },
-                    }),
-                    Mathematics.extend({ name: 'MathematicsDisplay' }).configure({
-                        regex: /\$\$([^\$]+)\$\$/gi,
-                        katexOptions: {
-                            throwOnError: false,
-                            displayMode: true,
-                        },
-                    }),
+                    this.editorConfig.enableLatex &&
+                        Mathematics.configure({
+                            regex: /(?<!\$)\$([^\$]+)\$(?!\$)/gi,
+                            katexOptions: {
+                                throwOnError: false,
+                            },
+                        }),
+                    this.editorConfig.enableLatex &&
+                        Mathematics.extend({ name: 'MathematicsDisplay' }).configure({
+                            regex: /\$\$([^\$]+)\$\$/gi,
+                            katexOptions: {
+                                throwOnError: false,
+                                displayMode: true,
+                            },
+                        }),
                 ],
                 onCreate: () => {
                     this.setValue(this.getContent());
