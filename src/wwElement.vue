@@ -868,6 +868,15 @@ export default {
                 '--ol-margin-top': this.content.ol?.marginTop,
                 '--ol-margin-bottom': this.content.ol?.marginBottom,
                 '--ol-padding-left': this.content.ol?.paddingLeft,
+                // li
+                '--li-fontSize': this.content.li?.fontSize,
+                '--li-fontFamily': this.content.li?.fontFamily,
+                '--li-fontWeight': this.content.li?.fontWeight,
+                '--li-textAlign': this.content.li?.textAlign,
+                '--li-color': this.content.li?.color,
+                '--li-lineHeight': this.content.li?.lineHeight,
+                '--li-margin-top': this.content.li?.marginTop,
+                '--li-margin-bottom': this.content.li?.marginBottom,
                 // mention
                 '--mention-fontSize': this.content.mention?.fontSize,
                 '--mention-fontFamily': this.content.mention?.fontFamily,
@@ -1670,7 +1679,7 @@ export default {
             line-height: var(--ul-lineHeight);
             margin-top: var(--ul-margin-top);
             margin-bottom: var(--ul-margin-bottom);
-            padding-left: var(--ul-padding-left);
+            padding-left: var(--ul-padding-left, 2rem);
         }
         ol {
             font-size: var(--ol-fontSize);
@@ -1681,7 +1690,18 @@ export default {
             line-height: var(--ol-lineHeight);
             margin-top: var(--ol-margin-top);
             margin-bottom: var(--ol-margin-bottom);
-            padding-left: var(--ol-padding-left);
+            padding-left: var(--ol-padding-left, 2rem);
+        }
+        ul:not([data-type='taskList']) li,
+        ol li {
+            font-size: var(--li-fontSize);
+            font-family: var(--li-fontFamily);
+            font-weight: var(--li-fontWeight);
+            text-align: var(--li-textAlign);
+            color: var(--li-color);
+            line-height: var(--li-lineHeight);
+            margin-top: var(--li-margin-top);
+            margin-bottom: var(--li-margin-bottom);
         }
         a {
             display: initial;
