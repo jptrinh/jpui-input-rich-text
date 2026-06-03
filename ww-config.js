@@ -347,7 +347,7 @@ export default {
             hidden: content => !content.debounce,
         },
         editorPadding: {
-            section: 'settings',
+            section: 'styles',
             label: { en: 'Editor padding' },
             type: 'Spacing',
             options: {
