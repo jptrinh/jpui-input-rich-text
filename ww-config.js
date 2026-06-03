@@ -846,7 +846,8 @@ export default {
             },
             options: {
                 item: {
-                    ...textOptions,
+                    marginTop: textOptions.marginTop,
+                    marginBottom: textOptions.marginBottom,
                     paddingLeft: {
                         type: 'Length',
                         label: { en: 'Padding left' },
@@ -861,12 +862,6 @@ export default {
                 singleLine: true,
             },
             defaultValue: {
-                fontSize: '',
-                fontFamily: '',
-                fontWeight: '',
-                textAlign: '',
-                color: '',
-                lineHeight: '',
                 marginTop: '',
                 marginBottom: '',
                 paddingLeft: '',
@@ -882,7 +877,8 @@ export default {
             },
             options: {
                 item: {
-                    ...textOptions,
+                    marginTop: textOptions.marginTop,
+                    marginBottom: textOptions.marginBottom,
                     paddingLeft: {
                         type: 'Length',
                         label: { en: 'Padding left' },
@@ -897,12 +893,6 @@ export default {
                 singleLine: true,
             },
             defaultValue: {
-                fontSize: '',
-                fontFamily: '',
-                fontWeight: '',
-                textAlign: '',
-                color: '',
-                lineHeight: '',
                 marginTop: '',
                 marginBottom: '',
                 paddingLeft: '',
@@ -917,16 +907,15 @@ export default {
                 return sidepanelContent.selectedTag !== 'li';
             },
             options: {
-                item: textOptions,
+                item: {
+                    color: textOptions.color,
+                    marginTop: textOptions.marginTop,
+                    marginBottom: textOptions.marginBottom,
+                },
                 singleLine: true,
             },
             defaultValue: {
-                fontSize: '',
-                fontFamily: '',
-                fontWeight: '',
-                textAlign: '',
                 color: '',
-                lineHeight: '',
                 marginTop: '',
                 marginBottom: '',
             },
