@@ -26,7 +26,7 @@ export default {
             {
                 label: 'Toolbar',
                 isCollapsible: true,
-                properties: ['menuColor', 'menuHoverColor', 'menuBgColor', 'menuHoverBgColor', 'menuEdgeFade'],
+                properties: ['menuColor', 'menuHoverColor', 'menuBgColor', 'menuHoverBgColor', 'menuEdgeFade', 'menuPaddingLeft', 'menuPaddingRight'],
             },
             {
                 label: 'Modal',
@@ -580,6 +580,60 @@ export default {
             },
             propertyHelp: {
                 tooltip: 'Adds a transparent fade on the left and right edges of the scrollable toolbar.',
+            },
+            /* wwEditor:end */
+        },
+        menuPaddingLeft: {
+            type: 'Spacing',
+            label: { en: 'Padding left' },
+            options: {
+                unitChoices: [
+                    { value: 'px', label: 'px', min: 0, max: 100 },
+                    { value: '%', label: '%', min: 0, max: 100 },
+                ],
+                noRange: true,
+                useVar: true,
+            },
+            defaultValue: '8px',
+            bindable: true,
+            states: true,
+            classes: true,
+            responsive: true,
+            hidden: content => content.customMenu || content.wrapMenu,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'CSS spacing value with unit (e.g., "8px", "5%")',
+            },
+            propertyHelp: {
+                tooltip: 'Left padding of the scrollable toolbar.',
+            },
+            /* wwEditor:end */
+        },
+        menuPaddingRight: {
+            type: 'Spacing',
+            label: { en: 'Padding right' },
+            options: {
+                unitChoices: [
+                    { value: 'px', label: 'px', min: 0, max: 100 },
+                    { value: '%', label: '%', min: 0, max: 100 },
+                ],
+                noRange: true,
+                useVar: true,
+            },
+            defaultValue: '8px',
+            bindable: true,
+            states: true,
+            classes: true,
+            responsive: true,
+            hidden: content => content.customMenu || content.wrapMenu,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'CSS spacing value with unit (e.g., "8px", "5%")',
+            },
+            propertyHelp: {
+                tooltip: 'Right padding of the scrollable toolbar.',
             },
             /* wwEditor:end */
         },
