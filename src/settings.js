@@ -6,7 +6,11 @@ export const textOptions = {
             fr: 'Taille',
         },
         options: {
-            unitChoices: [{ value: 'px', label: 'px', min: 1, max: 100 }],
+            unitChoices: [
+                { value: 'px', label: 'px', min: 1, max: 100 },
+                { value: 'em', label: 'em', min: 0.1, max: 10 },
+                { value: 'rem', label: 'rem', min: 0.1, max: 10 },
+            ],
             noRange: true,
         },
         responsive: true,
@@ -95,7 +99,14 @@ export const textOptions = {
         responsive: true,
         type: 'Length',
         options: {
-            unitChoices: [{ value: 'px', label: 'px', min: 0, max: 100 }],
+            unitChoices: [
+                { value: 'px', label: 'px', min: 0, max: 100 },
+                { value: '%', label: '%', min: 0, max: 300 },
+                { value: 'em', label: 'em', min: 0, max: 10 },
+                { value: 'rem', label: 'rem', min: 0, max: 10 },
+                { value: 'auto', label: 'auto' },
+                { value: 'none', label: 'none' },
+            ],
             noRange: true,
         },
         bindable: true,
@@ -108,7 +119,11 @@ export const textOptions = {
             fr: 'Margin top',
         },
         options: {
-            unitChoices: [{ value: 'px', label: 'px', min: 1, max: 100 }],
+            unitChoices: [
+                { value: 'px', label: 'px', min: 1, max: 100 },
+                { value: 'em', label: 'em', min: 0, max: 10 },
+                { value: 'rem', label: 'rem', min: 0, max: 10 },
+            ],
             noRange: true,
         },
         bindable: true,
@@ -121,7 +136,11 @@ export const textOptions = {
             fr: 'Margin bottom',
         },
         options: {
-            unitChoices: [{ value: 'px', label: 'px', min: 1, max: 100 }],
+            unitChoices: [
+                { value: 'px', label: 'px', min: 1, max: 100 },
+                { value: 'em', label: 'em', min: 0, max: 10 },
+                { value: 'rem', label: 'rem', min: 0, max: 10 },
+            ],
             noRange: true,
         },
         bindable: true,

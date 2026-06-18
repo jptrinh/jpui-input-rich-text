@@ -1053,7 +1053,11 @@ export default {
                         },
                         bindable: true,
                         options: {
-                            unitChoices: [{ value: 'px', label: 'px', min: 1, max: 100 }],
+                            unitChoices: [
+                                { value: 'px', label: 'px', min: 1, max: 100 },
+                                { value: 'em', label: 'em', min: 0, max: 10 },
+                                { value: 'rem', label: 'rem', min: 0, max: 10 },
+                            ],
                             noRange: true,
                             useVar: true,
                         },
@@ -1066,7 +1070,11 @@ export default {
                         },
                         bindable: true,
                         options: {
-                            unitChoices: [{ value: 'px', label: 'px', min: 1, max: 100 }],
+                            unitChoices: [
+                                { value: 'px', label: 'px', min: 1, max: 100 },
+                                { value: 'em', label: 'em', min: 0, max: 10 },
+                                { value: 'rem', label: 'rem', min: 0, max: 10 },
+                            ],
                             noRange: true,
                             useVar: true,
                         },
