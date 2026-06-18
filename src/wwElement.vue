@@ -758,6 +758,7 @@ export default {
                 '--menu-hover-color': this.content?.menuHoverColor,
                 '--menu-bg-color': this.content?.menuBgColor,
                 '--menu-hover-bg-color': this.content?.menuHoverBgColor,
+                '--menu-edge-fade': this.content?.menuEdgeFade === false ? 'none' : 'linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent)',
                 'flex-wrap': this.content.wrapMenu ? 'wrap' : 'nowrap',
             };
         },
@@ -1432,14 +1433,8 @@ export default {
 
             padding-left: 8px;
             padding-right: 8px;
-            mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
-            -webkit-mask-image: linear-gradient(
-                to right,
-                transparent,
-                black 20px,
-                black calc(100% - 20px),
-                transparent
-            );
+            mask-image: var(--menu-edge-fade);
+            -webkit-mask-image: var(--menu-edge-fade);
         }
     }
 

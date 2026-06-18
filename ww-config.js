@@ -26,7 +26,7 @@ export default {
             {
                 label: 'Toolbar',
                 isCollapsible: true,
-                properties: ['menuColor', 'menuHoverColor', 'menuBgColor', 'menuHoverBgColor'],
+                properties: ['menuColor', 'menuHoverColor', 'menuBgColor', 'menuHoverBgColor', 'menuEdgeFade'],
             },
             {
                 label: 'Modal',
@@ -561,6 +561,27 @@ export default {
             classes: true,
             responsive: true,
             hidden: content => content.customMenu,
+        },
+        menuEdgeFade: {
+            label: {
+                en: 'Edge fade',
+            },
+            type: 'OnOff',
+            defaultValue: true,
+            bindable: true,
+            states: true,
+            classes: true,
+            responsive: true,
+            hidden: content => content.customMenu,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'boolean',
+                tooltip: 'Enable or disable the fade effect on toolbar edges',
+            },
+            propertyHelp: {
+                tooltip: 'Adds a transparent fade on the left and right edges of the scrollable toolbar.',
+            },
+            /* wwEditor:end */
         },
         modalBgColor: {
             label: { en: 'Background' },
