@@ -759,8 +759,7 @@ export default {
                 '--menu-bg-color': this.content?.menuBgColor,
                 '--menu-hover-bg-color': this.content?.menuHoverBgColor,
                 '--menu-edge-fade': this.content?.menuEdgeFade === false ? 'none' : 'linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent)',
-                '--menu-padding-left': this.content?.menuPaddingLeft || '8px',
-                '--menu-padding-right': this.content?.menuPaddingRight || '8px',
+                '--menu-padding': this.content?.menuPadding || '8px',
                 'flex-wrap': this.content.wrapMenu ? 'wrap' : 'nowrap',
             };
         },
@@ -1433,8 +1432,8 @@ export default {
                 flex-shrink: 0;
             }
 
-            padding-left: var(--menu-padding-left, 8px);
-            padding-right: var(--menu-padding-right, 8px);
+            padding-left: var(--menu-padding, 8px);
+            padding-right: var(--menu-padding, 8px);
             mask-image: var(--menu-edge-fade);
             -webkit-mask-image: var(--menu-edge-fade);
         }
